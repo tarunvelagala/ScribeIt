@@ -10,4 +10,9 @@ class ScribeItApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void testScribeItApplication() {
+		ScribeItApplication.main(new String[] {});
+	}
+
 }
