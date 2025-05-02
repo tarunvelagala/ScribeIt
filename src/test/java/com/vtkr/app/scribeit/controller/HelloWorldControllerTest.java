@@ -1,4 +1,4 @@
-package com.vtkr.app.scribeit;
+package com.vtkr.app.scribeit.controller;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

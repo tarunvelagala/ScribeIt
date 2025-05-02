@@ -1,4 +1,4 @@
-package com.vtkr.app.scribeit;
+package com.vtkr.app.scribeit.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
