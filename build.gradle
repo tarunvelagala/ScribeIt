@@ -1,12 +1,20 @@
 plugins {
+	id 'application'
 	id 'java'
+	id 'java-library'
 	id 'jacoco'
 	id 'org.springframework.boot' version '3.4.5'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'software.amazon.smithy.gradle.smithy-base' version '1.2.0'
 }
 
 group = 'com.scribeit'
 version = '0.0.1-SNAPSHOT'
+
+// Use that application plugin to start the service via the `run` task.
+application {
+    mainClass = "com.scribeit.Application"
+}
 
 java {
 	toolchain {
@@ -22,6 +30,7 @@ configurations {
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 dependencies {
@@ -30,7 +39,24 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	
+	// https://mvnrepository.com/artifact/software.amazon.smithy.java/codegen-core
+	implementation 'software.amazon.smithy.java:server-core:0.0.2'
+    smithyBuild 'software.amazon.smithy.java:plugins:0.0.2'
 }
+
+// Add generated Java files to the main sourceSet
+afterEvaluate {
+    def serverPath = smithy.getPluginProjectionPath(smithy.sourceProjection.get(), "java-server-codegen")
+    sourceSets.main.java.srcDirs += serverPath
+}
+
+tasks.named('compileJava') {
+	dependsOn 'smithyBuild'
+}
+
+// Helps Intellij IDE's discover smithy models
+sourceSets.main.java.srcDirs += "model"
 
 tasks.named('test') {
 	useJUnitPlatform()
