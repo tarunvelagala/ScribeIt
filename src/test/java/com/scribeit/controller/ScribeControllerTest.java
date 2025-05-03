@@ -10,7 +10,7 @@ public class ScribeControllerTest {
     @Test
     void testGetScribe() {
         final ScribeController mockScribeController = new ScribeController();
-        final String scribeResponse = mockScribeController.getScribe(TEST_SCRIBE_ID);
+        final String scribeResponse = mockScribeController.getScribeById(TEST_SCRIBE_ID);
         Assertions.assertTrue(TEST_SCRIBE_ID.equals(scribeResponse));
     }
 }
