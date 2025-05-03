@@ -1,4 +1,4 @@
-package com.vtkr.app.scribeit;
+package com.vtkr.scribeit.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

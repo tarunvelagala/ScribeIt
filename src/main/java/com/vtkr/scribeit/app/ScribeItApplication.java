@@ -1,4 +1,4 @@
-package com.vtkr.app.scribeit;
+package com.vtkr.scribeit.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

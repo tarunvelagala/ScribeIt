@@ -1,6 +1,7 @@
-package com.vtkr.app.scribeit.controller;
+package com.vtkr.scribeit.app.controller;
 
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HelloWorldControllerTest {
