@@ -1,4 +1,4 @@
-package com.vtkr.scribeit.app.controller;
+package com.scribeit.controller;
 
 import org.junit.jupiter.api.Test;
 

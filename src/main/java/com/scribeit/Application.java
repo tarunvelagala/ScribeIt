@@ -1,13 +1,13 @@
-package com.vtkr.scribeit.app;
+package com.scribeit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ScribeItApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScribeItApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

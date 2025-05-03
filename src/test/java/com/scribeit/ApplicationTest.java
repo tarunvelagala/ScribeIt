@@ -1,10 +1,10 @@
-package com.vtkr.scribeit.app;
+package com.scribeit;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ScribeItApplicationTests {
+class ApplicationTest {
 
 	@Test
 	void contextLoads() {
@@ -12,7 +12,7 @@ class ScribeItApplicationTests {
 
 	@Test
 	void testScribeItApplication() {
-		ScribeItApplication.main(new String[] {});
+		Application.main(new String[] {});
 	}
 
 }
